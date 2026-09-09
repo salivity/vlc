@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Configure VLC Audio for Night Viewing - vlc</title>
+    <meta name="description" content="Watching movies late at night often presents a frustrating contrast between whisper-quiet dialogue and deafening action sequences. Configuring dynamic range compression in VLC Media Player balances these audio extremes by raising the volume of quiet soun">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-configure-vlc-audio-for-night-viewing">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Configure VLC Audio for Night Viewing - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-configure-vlc-audio-for-night-viewing" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Watching movies late at night often presents a frustrating contrast between whisper-quiet dialogue and deafening action sequences. Configuring dynamic range compression in VLC Media Player balances these audio extremes by raising the volume of quiet soun" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-configure-vlc-audio-for-night-viewing">How to Configure
+VLC Audio for Night Viewing</h1>
+<p>Watching movies late at night often presents a frustrating contrast
+between whisper-quiet dialogue and deafening action sequences.
+Configuring dynamic range compression in VLC Media Player balances these
+audio extremes by raising the volume of quiet sounds and dampening
+sudden, loud peaks to create an effective "night mode." This guide
+explains how to locate and optimize VLC's built-in compressor settings
+so you can enjoy clear dialogue without disturbing others.</p>
+<h2 id="method-1-adjusting-the-built-in-compressor">Method 1: Adjusting
+the Built-in Compressor</h2>
+<p>VLC features a real-time compressor tool designed specifically to
+flatten dynamic range.</p>
+<ol type="1">
+<li>Open VLC Media Player.</li>
+<li>Open the adjustments panel:
+<ul>
+<li><strong>Windows/Linux:</strong> Click <strong>Tools</strong> in the
+top menu and select <strong>Effects and Filters</strong> (or press
+<code>Ctrl + E</code>).</li>
+<li><strong>macOS:</strong> Click <strong>Window</strong> in the top
+menu and select <strong>Audio Effects</strong> (or press
+<code>Cmd + E</code>).</li>
+</ul></li>
+<li>Click the <strong>Audio Effects</strong> tab, then select the
+<strong>Compressor</strong> tab.</li>
+<li>Check the <strong>Enable</strong> box to activate the tool.</li>
+</ol>
+<h3 id="recommended-settings-for-late-night-listening">Recommended
+Settings for Late-Night Listening</h3>
+<p>Adjust the sliders to the following parameters for an optimal night
+viewing balance:</p>
+<ul>
+<li><strong>Threshold:</strong> Set to around <strong>-20.0 dB</strong>
+to <strong>-15.0 dB</strong>. This dictates the volume level at which
+the compressor starts working. A lower threshold ensures that louder
+action sequences are caught early.</li>
+<li><strong>Ratio:</strong> Set between <strong>4.0:1</strong> and
+<strong>8.0:1</strong>. This controls how heavily loud sounds are
+reduced. A higher ratio creates a flatter, more consistent audio
+experience.</li>
+<li><strong>Attack Time:</strong> Set between <strong>1.5 ms</strong>
+and <strong>10.0 ms</strong>. A fast attack time ensures sudden
+explosions or sound effects are squashed instantly before waking anyone
+up.</li>
+<li><strong>Release Time:</strong> Set between <strong>100.0 ms</strong>
+and <strong>250.0 ms</strong>. This allows the volume to recover
+smoothly after a loud noise without introducing noticeable audio
+"pumping."</li>
+<li><strong>Makeup Gain:</strong> Set between <strong>6.0 dB</strong>
+and <strong>10.0 dB</strong>. Reducing loud peaks lowers the overall
+perceived volume, so makeup gain boosts everything back to an audible
+level, making whispered dialogue easy to hear.</li>
+<li><strong>Knee Radius:</strong> Set between <strong>1.0 dB</strong>
+and <strong>3.0 dB</strong> for a smooth transition as compression kicks
+in.</li>
+</ul>
+<p>The changes apply immediately. You can tweak the
+<strong>Threshold</strong> and <strong>Makeup Gain</strong> sliders
+while your media is playing until dialogue is crisp and sound effects
+are restrained.</p>
+<hr />
+<h2 id="method-2-making-dynamic-range-compression-permanent">Method 2:
+Making Dynamic Range Compression Permanent</h2>
+<p>Settings applied in the <em>Effects and Filters</em> panel reset when
+VLC closes. To make the night viewing profile permanent across all
+playback sessions:</p>
+<ol type="1">
+<li>Click <strong>Tools</strong> &gt; <strong>Preferences</strong> (or
+press <code>Ctrl + P</code>).</li>
+<li>At the bottom-left corner under <strong>Show settings</strong>,
+select the <strong>All</strong> radio button.</li>
+<li>In the left sidebar, expand <strong>Audio</strong> and click on
+<strong>Filters</strong>.</li>
+<li>Check the box next to <strong>Dynamic range
+compressor</strong>.</li>
+<li>In the left sidebar, expand <strong>Filters</strong> beneath
+<strong>Audio</strong> and click on <strong>Compressor</strong>.</li>
+<li>Enter the recommended values from Method 1 into the respective
+fields (e.g., RMS/peak, attack, release, threshold, ratio, knee, and
+makeup gain).</li>
+<li>Click <strong>Save</strong> and restart VLC.</li>
+</ol>
+<hr />
+<h2 id="alternative-simple-volume-normalization">Alternative: Simple
+Volume Normalization</h2>
+<p>If you prefer a simpler configuration without manual slider
+adjustments:</p>
+<ol type="1">
+<li>Go to <strong>Tools</strong> &gt; <strong>Preferences</strong>
+(simple settings view).</li>
+<li>Click the <strong>Audio</strong> tab at the top.</li>
+<li>In the <em>Effects</em> section, check the box for <strong>Normalize
+volume to:</strong>.</li>
+<li>Set the value between <strong>1.5</strong> and
+<strong>2.0</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>This native setting acts as a basic peak limiter, automatically
+preventing audio from exceeding a comfortable threshold during
+late-night playback.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

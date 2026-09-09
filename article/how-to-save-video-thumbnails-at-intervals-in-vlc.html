@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Save Video Thumbnails at Intervals in VLC - vlc</title>
+    <meta name="description" content="VLC Media Player includes a built-in feature known as the Scene video filter, which automatically extracts and saves frames from a video at designated intervals. This guide explains how to enable advanced settings in VLC, configure output parameters such">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-save-video-thumbnails-at-intervals-in-vlc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Save Video Thumbnails at Intervals in VLC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-save-video-thumbnails-at-intervals-in-vlc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player includes a built-in feature known as the Scene video filter, which automatically extracts and saves frames from a video at designated intervals. This guide explains how to enable advanced settings in VLC, configure output parameters such" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-save-video-thumbnails-at-intervals-in-vlc">How to Save
+Video Thumbnails at Intervals in VLC</h1>
+<p>VLC Media Player includes a built-in feature known as the Scene video
+filter, which automatically extracts and saves frames from a video at
+designated intervals. This guide explains how to enable advanced
+settings in VLC, configure output parameters such as image format and
+capture frequency, and properly disable the filter once frame extraction
+is complete.</p>
+<h3 id="step-1-access-advanced-preferences">Step 1: Access Advanced
+Preferences</h3>
+<ol type="1">
+<li>Launch VLC Media Player.</li>
+<li>Navigate to <strong>Tools</strong> in the top menu bar and select
+<strong>Preferences</strong> (or press <code>Ctrl + P</code> on Windows
+/ <code>Cmd + ,</code> on macOS).</li>
+<li>At the bottom-left corner of the Preferences window, locate the
+<strong>Show settings</strong> section and select the
+<strong>All</strong> radio button to unlock advanced configuration
+options.</li>
+</ol>
+<h3 id="step-2-configure-the-scene-filter-settings">Step 2: Configure
+the Scene Filter Settings</h3>
+<ol type="1">
+<li>In the left-hand sidebar, scroll down to the <strong>Video</strong>
+section.</li>
+<li>Expand <strong>Filters</strong> and click on <strong>Scene
+filter</strong>.</li>
+<li>Configure the extraction settings:
+<ul>
+<li><strong>Image format:</strong> Choose your preferred format (e.g.,
+<code>png</code> or <code>jpeg</code>).</li>
+<li><strong>Image width and height:</strong> Enter specific pixel
+dimensions, or leave them set to <code>-1</code> to retain the native
+resolution of the video.</li>
+<li><strong>Filename prefix:</strong> Enter a prefix for your output
+files (e.g., <code>thumbnail_</code> or <code>scene_</code>).</li>
+<li><strong>Directory path prefix:</strong> Enter the absolute path to
+the folder where VLC should save the extracted images (e.g.,
+<code>C:\Thumbnails</code> on Windows or
+<code>/Users/username/Thumbnails</code> on macOS). Ensure this folder
+already exists.</li>
+<li><strong>Recording ratio:</strong> This setting determines how
+frequently frames are saved. The ratio represents the number of frames
+between captures. To calculate the ratio for a time interval, multiply
+the video's frame rate (FPS) by your desired interval in seconds. For
+example, if a video runs at 30 FPS and you want a thumbnail every 5
+seconds, set the recording ratio to <code>150</code> (30 × 5).</li>
+</ul></li>
+</ol>
+<h3 id="step-3-activate-the-scene-filter">Step 3: Activate the Scene
+Filter</h3>
+<ol type="1">
+<li>In the left-hand sidebar, click directly on the main
+<strong>Filters</strong> category (located under
+<strong>Video</strong>).</li>
+<li>Look through the list of video filter modules on the right.</li>
+<li>Check the box next to <strong>Scene video filter</strong>.</li>
+<li>Click <strong>Save</strong> to apply your changes.</li>
+</ol>
+<h3 id="step-4-extract-the-thumbnails">Step 4: Extract the
+Thumbnails</h3>
+<ol type="1">
+<li>Open and play the video file you wish to process.</li>
+<li>Let the video play normally. VLC will extract and save images in the
+background into your selected output directory.</li>
+<li>Stop or pause the video when frame capture is complete.</li>
+</ol>
+<h3 id="step-5-disable-the-scene-filter">Step 5: Disable the Scene
+Filter</h3>
+<p>The Scene filter remains active across all playback until explicitly
+turned off. Leaving it enabled will cause VLC to extract frames from
+every video you open.</p>
+<ol type="1">
+<li>Go back to <strong>Tools</strong> &gt;
+<strong>Preferences</strong>.</li>
+<li>Select <strong>All</strong> under <strong>Show
+settings</strong>.</li>
+<li>Click on <strong>Filters</strong> under the <strong>Video</strong>
+category.</li>
+<li>Uncheck <strong>Scene video filter</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

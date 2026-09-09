@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Control VLC Remotely with a Web Browser - vlc</title>
+    <meta name="description" content="VLC Media Player includes a built-in HTTP interface that allows you to control media playback remotely using any standard web browser on a computer, smartphone, or tablet. By enabling this native feature and setting a password, you can pause, play, adjus">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-control-vlc-remotely-with-a-web-browser">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Control VLC Remotely with a Web Browser - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-control-vlc-remotely-with-a-web-browser" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player includes a built-in HTTP interface that allows you to control media playback remotely using any standard web browser on a computer, smartphone, or tablet. By enabling this native feature and setting a password, you can pause, play, adjus" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-control-vlc-remotely-with-a-web-browser">How to Control
+VLC Remotely with a Web Browser</h1>
+<p>VLC Media Player includes a built-in HTTP interface that allows you
+to control media playback remotely using any standard web browser on a
+computer, smartphone, or tablet. By enabling this native feature and
+setting a password, you can pause, play, adjust volume, and manage
+playlists across your local network without installing third-party
+software.</p>
+<h3 id="step-1-enable-the-vlc-web-interface">Step 1: Enable the VLC Web
+Interface</h3>
+<ol type="1">
+<li>Open VLC Media Player on the host computer.</li>
+<li>Navigate to <strong>Tools</strong> &gt; <strong>Preferences</strong>
+(or press <code>Ctrl + P</code>).</li>
+<li>In the bottom-left corner of the window, switch the <strong>Show
+settings</strong> option from <em>Simple</em> to
+<strong>All</strong>.</li>
+<li>In the left sidebar, click on <strong>Interface</strong>, then
+select <strong>Main interfaces</strong>.</li>
+<li>Check the box next to <strong>Web</strong> to enable the HTTP remote
+control interface.</li>
+</ol>
+<h3 id="step-2-set-the-web-access-password">Step 2: Set the Web Access
+Password</h3>
+<p>VLC requires a password for web access to prevent unauthorized
+control.</p>
+<ol type="1">
+<li>While still in the <strong>All</strong> settings view, expand
+<strong>Main interfaces</strong> in the left sidebar and select
+<strong>Lua</strong>.</li>
+<li>Under the <strong>Lua HTTP</strong> section on the right, locate the
+<strong>Password</strong> field.</li>
+<li>Enter a secure password of your choice. Leave the username field
+blank, as VLC uses a blank username by default.</li>
+<li>Click <strong>Save</strong> and restart VLC for the changes to take
+effect.</li>
+</ol>
+<h3 id="step-3-find-the-host-ip-address">Step 3: Find the Host IP
+Address</h3>
+<p>To control VLC from another device, you need the local IP address of
+the computer running VLC:</p>
+<ul>
+<li><strong>Windows:</strong> Open the Command Prompt, type
+<code>ipconfig</code>, and look for your <strong>IPv4 Address</strong>
+(typically starting with <code>192.168.x.x</code> or
+<code>10.0.x.x</code>).</li>
+<li><strong>macOS:</strong> Open <strong>System Settings</strong> &gt;
+<strong>Network</strong>, select your active connection, and view the IP
+address.</li>
+<li><strong>Linux:</strong> Open a terminal and run <code>ip addr</code>
+or <code>hostname -I</code>.</li>
+</ul>
+<h3 id="step-4-access-the-interface-from-a-browser">Step 4: Access the
+Interface from a Browser</h3>
+<ol type="1">
+<li>Open any standard web browser on your secondary device (phone,
+tablet, or another computer connected to the same Wi-Fi or local
+network).</li>
+<li>Enter the host computer's IP address followed by port
+<code>8080</code> into the address bar (for example,
+<code>http://192.168.1.50:8080</code>). If testing on the host computer
+itself, use <code>http://localhost:8080</code>.</li>
+<li>When prompted for authentication, leave the username blank and enter
+the password configured in Step 2.</li>
+</ol>
+<p>The browser will display the VLC web interface, giving you full
+control over playback, volume, tracks, and the media library directly
+from your browser. Ensure that port <code>8080</code> is allowed through
+the host computer's firewall if the connection fails to load.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

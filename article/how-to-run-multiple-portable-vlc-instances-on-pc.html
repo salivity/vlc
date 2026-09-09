@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Run Multiple Portable VLC Instances on PC - vlc</title>
+    <meta name="description" content="Running multiple, completely isolated portable instances of VLC media player on a single PC is fully possible and relatively simple to configure. By using portable versions of the software placed in separate directories and redirecting their configuratio">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-run-multiple-portable-vlc-instances-on-pc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Run Multiple Portable VLC Instances on PC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-run-multiple-portable-vlc-instances-on-pc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Running multiple, completely isolated portable instances of VLC media player on a single PC is fully possible and relatively simple to configure. By using portable versions of the software placed in separate directories and redirecting their configuratio" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-run-multiple-portable-vlc-instances-on-pc">How to Run
+Multiple Portable VLC Instances on PC</h1>
+<p>Running multiple, completely isolated portable instances of VLC media
+player on a single PC is fully possible and relatively simple to
+configure. By using portable versions of the software placed in separate
+directories and redirecting their configuration data, each VLC instance
+operates independently with its own settings, playlists, caches, and
+audio/video output controls without conflicting with other running
+instances.</p>
+<h3 id="why-standard-vlc-cannot-do-this-by-default">Why Standard VLC
+Cannot Do This by Default</h3>
+<p>A standard VLC installation writes all user data, configuration
+files, and temporary cache directly to the Windows AppData directory
+(<code>%APPDATA%\vlc</code>). Even if you launch multiple windows, they
+share the same preferences file. If one instance modifies a setting, it
+affects subsequent instances. Furthermore, default settings often
+enforce a "single-instance" rule, forcing any newly opened media to play
+inside the currently active player window.</p>
+<h3 id="step-1-obtain-the-portable-version">Step 1: Obtain the Portable
+Version</h3>
+<p>To achieve full isolation, do not use the standard <code>.exe</code>
+installer. Instead, download the standalone archive:</p>
+<ol type="1">
+<li>Go to the official VideoLAN website.</li>
+<li>Download the official VLC package in <code>.zip</code> or
+<code>.7z</code> format (alternatively, the VLC Portable package from
+PortableApps).</li>
+<li>Extract the contents into two or more distinct folders on your drive
+(for example, <code>C:\VLC_Instance_1</code> and
+<code>C:\VLC_Instance_2</code>).</li>
+</ol>
+<h3 id="step-2-isolate-configurations-and-cache">Step 2: Isolate
+Configurations and Cache</h3>
+<p>To make each instance completely independent, you must ensure each
+folder writes its preferences to its own local directory rather than the
+shared Windows user profile.</p>
+<p>If using the official standalone <code>.zip</code>/<code>.7z</code>
+release:</p>
+<ol type="1">
+<li>Open the folder for your first instance.</li>
+<li>Create a shortcut to <code>vlc.exe</code>.</li>
+<li>Right-click the shortcut, select <strong>Properties</strong>, and
+find the <strong>Target</strong> field.</li>
+<li>Append custom parameters to designate an isolated configuration and
+cache path:
+<pre class="text"><code>--config=&quot;C:\VLC_Instance_1\config&quot; --cache-dir=&quot;C:\VLC_Instance_1\cache&quot;</code></pre></li>
+<li>Repeat this process for each subsequent instance folder, matching
+the path to that specific folder.</li>
+</ol>
+<p>If using the PortableApps version, configuration data is already
+isolated inside the <code>Data</code> subdirectory of that specific
+folder, meaning each copied folder is inherently separated without
+needing command-line arguments.</p>
+<h3 id="step-3-disable-single-instance-settings">Step 3: Disable
+Single-Instance Settings</h3>
+<p>To prevent VLC from hijacking media playback from other instances,
+verify the multi-instance setting inside each player:</p>
+<ol type="1">
+<li>Launch the VLC instance.</li>
+<li>Navigate to <strong>Tools</strong> &gt; <strong>Preferences</strong>
+(or press <strong>Ctrl + P</strong>).</li>
+<li>At the bottom under "Show settings", make sure
+<strong>Simple</strong> is selected.</li>
+<li>Select the <strong>Interface</strong> tab.</li>
+<li>Locate the <strong>Playlist and Instances</strong> section.</li>
+<li>Uncheck <strong>Use only one instance when started from file
+manager</strong>.</li>
+<li>Uncheck <strong>Enqueue items into playlist in one instance
+mode</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+<li>Repeat this process inside the other portable folders.</li>
+</ol>
+<h3 id="step-4-running-the-instances">Step 4: Running the Instances</h3>
+<p>Once configured, launch each instance using its designated executable
+or custom shortcut. You can now assign different audio output devices,
+separate hotkeys, distinct network streams, or individual aspect ratios
+to each player simultaneously without any risk of settings bleeding
+between sessions.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

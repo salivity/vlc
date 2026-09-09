@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLC Low Latency Mode for Live Camera Feeds - vlc</title>
+    <meta name="description" content="VLC Media Player does not include a dedicated, single-click low-latency mode for monitoring live camera feeds. However, because VLC defaults to high buffer sizes designed for smooth video playback rather than real-time interaction, monitoring RTSP or IP">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/vlc-low-latency-mode-for-live-camera-feeds">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VLC Low Latency Mode for Live Camera Feeds - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/vlc-low-latency-mode-for-live-camera-feeds" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player does not include a dedicated, single-click low-latency mode for monitoring live camera feeds. However, because VLC defaults to high buffer sizes designed for smooth video playback rather than real-time interaction, monitoring RTSP or IP" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="vlc-low-latency-mode-for-live-camera-feeds">VLC Low Latency Mode
+for Live Camera Feeds</h1>
+<p>VLC Media Player does not include a dedicated, single-click
+low-latency mode for monitoring live camera feeds. However, because VLC
+defaults to high buffer sizes designed for smooth video playback rather
+than real-time interaction, monitoring RTSP or IP cameras often
+introduces a noticeable delay of several seconds. You can effectively
+eliminate this lag and achieve near-real-time monitoring by manually
+adjusting VLC's network caching, transport protocols, and hardware
+decoding settings.</p>
+<h2 id="does-vlc-have-a-native-low-latency-switch">Does VLC Have a
+Native Low-Latency Switch?</h2>
+<p>No. VLC does not offer an official preset labeled "Low Latency Mode."
+By design, VLC prioritizes stream stability and frame consistency over
+real-time delivery. When opening a network stream, VLC applies a default
+network cache—typically between 1,000 to 1,200 milliseconds—to prevent
+stuttering caused by jitter or dropped packets. For surveillance, drone
+feeds, or live production monitoring, this creates unwanted latency that
+must be reduced through manual configuration.</p>
+<h2 id="how-to-configure-vlc-for-low-latency">How to Configure VLC for
+Low Latency</h2>
+<p>To achieve minimal delay when monitoring an IP camera or RTSP stream,
+apply the following adjustments:</p>
+<h3 id="1-reduce-network-caching-in-the-gui">1. Reduce Network Caching
+in the GUI</h3>
+<p>When opening a stream via the graphical interface:</p>
+<ol type="1">
+<li>Go to <strong>Media</strong> &gt; <strong>Open Network
+Stream</strong>.</li>
+<li>Enter your camera’s RTSP or RTMP URL.</li>
+<li>Check the <strong>Show more options</strong> box at the bottom.</li>
+<li>Locate the <strong>Caching</strong> field and change it from the
+default value to <strong>100 ms</strong> (or lower, such as 50 ms, if
+your local network is stable).</li>
+<li>Click <strong>Play</strong>.</li>
+</ol>
+<h3 id="2-lower-global-input-caching">2. Lower Global Input Caching</h3>
+<p>To make low-latency playback the default for all streams:</p>
+<ol type="1">
+<li>Navigate to <strong>Tools</strong> &gt;
+<strong>Preferences</strong>.</li>
+<li>At the bottom-left corner, under <em>Show settings</em>, select
+<strong>All</strong>.</li>
+<li>In the left sidebar, navigate to <strong>Input /
+Codecs</strong>.</li>
+<li>Scroll down to the <strong>Advanced</strong> section on the
+right.</li>
+<li>Change <strong>Network caching (ms)</strong> to <strong>100</strong>
+or <strong>50</strong>.</li>
+<li>Click <strong>Save</strong> and restart VLC.</li>
+</ol>
+<h3 id="3-force-rtsp-over-tcp">3. Force RTSP over TCP</h3>
+<p>Packet loss over UDP can cause severe frame corruption and
+artifacting when network buffers are minimized. Forcing TCP ensures
+complete frame delivery:</p>
+<ol type="1">
+<li>In <strong>Tools</strong> &gt; <strong>Preferences</strong> (set to
+<strong>All</strong>), expand <strong>Input / Codecs</strong> &gt;
+<strong>Demuxers</strong> &gt; <strong>RTP/RTSP</strong>.</li>
+<li>Check the box for <strong>Use RTP over RTSP (TCP)</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<h3 id="4-use-command-line-flags-for-maximum-performance">4. Use
+Command-Line Flags for Maximum Performance</h3>
+<p>The most reliable method for launching zero-latency or
+ultra-low-latency streams is via the command line. This bypasses
+interface overhead and forces strict buffer constraints:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vlc</span> <span class="at">--network-caching</span><span class="op">=</span>50 <span class="at">--clock-jitter</span><span class="op">=</span>0 <span class="at">--clock-synchro</span><span class="op">=</span>0 <span class="at">--rtsp-tcp</span> rtsp://camera_ip_address:port/stream</span></code></pre></div>
+<p>Key arguments explained:</p>
+<ul>
+<li><code>--network-caching=50</code>: Sets the buffer to 50
+milliseconds.</li>
+<li><code>--clock-jitter=0</code>: Prevents VLC from automatically
+increasing buffer size when packet timing varies.</li>
+<li><code>--clock-synchro=0</code>: Disables internal clock
+synchronization routines that can cause artificial delays.</li>
+<li><code>--rtsp-tcp</code>: Enforces TCP transport.</li>
+</ul>
+<h2 id="limitations-of-vlc-for-live-monitoring">Limitations of VLC for
+Live Monitoring</h2>
+<p>While optimizing these settings reduces delay to fractions of a
+second, VLC is primarily a media player, not a dedicated Video
+Management System (VMS). In ultra-low-latency setups, VLC may
+occasionally drop frames or stutter if the camera's GOP (Group of
+Pictures) size or keyframe interval is long. For production environments
+requiring sub-second WebRTC delivery or multi-camera matrices, dedicated
+VMS software or lightweight RTSP players may provide better stability
+than a heavily modified VLC instance.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

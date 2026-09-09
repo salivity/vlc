@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Connect VLC to an RTSP Security Camera - vlc</title>
+    <meta name="description" content="Connecting VLC Media Player to an RTSP (Real-Time Streaming Protocol) security camera feed allows you to monitor live surveillance video directly from your computer without proprietary software. This guide provides a straightforward, step-by-step walkthr">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-connect-vlc-to-an-rtsp-security-camera">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Connect VLC to an RTSP Security Camera - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-connect-vlc-to-an-rtsp-security-camera" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Connecting VLC Media Player to an RTSP (Real-Time Streaming Protocol) security camera feed allows you to monitor live surveillance video directly from your computer without proprietary software. This guide provides a straightforward, step-by-step walkthr" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-connect-vlc-to-an-rtsp-security-camera">How to Connect
+VLC to an RTSP Security Camera</h1>
+<p>Connecting VLC Media Player to an RTSP (Real-Time Streaming Protocol)
+security camera feed allows you to monitor live surveillance video
+directly from your computer without proprietary software. This guide
+provides a straightforward, step-by-step walkthrough to help you find
+your camera's network information, construct the correct RTSP URL, and
+stream the live video feed using VLC.</p>
+<h3 id="1-gather-your-camera-details">1. Gather Your Camera Details</h3>
+<p>Before opening VLC, collect the following information from your
+camera's web interface or mobile app:</p>
+<ul>
+<li><strong>IP Address:</strong> The local IP address assigned to the
+camera (e.g., <code>192.168.1.50</code>).</li>
+<li><strong>Port:</strong> The default RTSP port is usually
+<code>554</code>. If unchanged, it is often optional in the URL.</li>
+<li><strong>Username and Password:</strong> The login credentials for
+your camera's stream.</li>
+<li><strong>Stream Path:</strong> The internal path specific to your
+camera's brand and model (e.g., <code>/h264Preview_01_main</code> for
+Reolink, <code>/Streaming/Channels/101</code> for Hikvision, or
+<code>/cam/realmonitor?channel=1&amp;subtype=0</code> for Dahua).
+Consult your camera manufacturer's manual to find your exact path.</li>
+</ul>
+<h3 id="2-construct-the-rtsp-url">2. Construct the RTSP URL</h3>
+<p>Assemble your details into the standard RTSP URL structure:</p>
+<p><code>rtsp://username:password@IP_address:554/stream_path</code></p>
+<p><em>Example:</em><br />
+<code>rtsp://admin:mypassword123@192.168.1.50:554/h264Preview_01_main</code></p>
+<h3 id="3-open-the-stream-in-vlc">3. Open the Stream in VLC</h3>
+<ol type="1">
+<li>Launch <strong>VLC Media Player</strong>.</li>
+<li>Click on <strong>Media</strong> in the top menu bar and select
+<strong>Open Network Stream</strong> (or press <strong>Ctrl + N</strong>
+on Windows / <strong>Cmd + N</strong> on macOS).</li>
+<li>In the <strong>Network</strong> tab, enter your complete RTSP URL
+into the <strong>Please enter a network URL</strong> field.</li>
+<li>Click <strong>Play</strong> (or <strong>Open</strong> on
+macOS).</li>
+</ol>
+<p>VLC will connect to the camera and begin displaying the live video
+feed after a brief buffering period.</p>
+<h3 id="4-troubleshooting-connection-issues">4. Troubleshooting
+Connection Issues</h3>
+<ul>
+<li><strong>Video Lag or Gray Artifacts:</strong> Go to <strong>Tools
+&gt; Preferences</strong>, select <strong>All</strong> under <em>Show
+settings</em> (bottom-left), navigate to <strong>Input /
+Codecs</strong>, scroll to <strong>Network caching (ms)</strong>, and
+increase the value from <code>1000</code> to <code>2000</code> or
+<code>3000</code>.</li>
+<li><strong>Connection Drops:</strong> In the same advanced settings
+under <strong>Input / Codecs &gt; Demuxers &gt; RTP/RTSP</strong>, check
+the box for <strong>Use RTP over RTSP (TCP)</strong> to prevent packet
+loss over unstable Wi-Fi networks.</li>
+<li><strong>Authentication Errors:</strong> If VLC fails to authenticate
+when credentials are included in the URL, enter the URL without the
+username and password (<code>rtsp://IP_address:554/stream_path</code>)
+and input your credentials when VLC's authentication pop-up
+appears.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

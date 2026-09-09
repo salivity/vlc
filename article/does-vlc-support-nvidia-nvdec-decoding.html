@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Does VLC Support Nvidia NVDEC Decoding? - vlc</title>
+    <meta name="description" content="VLC media player fully supports hardware-accelerated decoding powered by Nvidia NVDEC, significantly reducing CPU usage and improving playback performance for high-resolution video. While VLC does not always display a setting explicitly labeled "NVDEC,"">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/does-vlc-support-nvidia-nvdec-decoding">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Does VLC Support Nvidia NVDEC Decoding? - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/does-vlc-support-nvidia-nvdec-decoding" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC media player fully supports hardware-accelerated decoding powered by Nvidia NVDEC, significantly reducing CPU usage and improving playback performance for high-resolution video. While VLC does not always display a setting explicitly labeled "NVDEC,"" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="does-vlc-support-nvidia-nvdec-decoding">Does VLC Support Nvidia
+NVDEC Decoding?</h1>
+<p>VLC media player fully supports hardware-accelerated decoding powered
+by Nvidia NVDEC, significantly reducing CPU usage and improving playback
+performance for high-resolution video. While VLC does not always display
+a setting explicitly labeled "NVDEC," it directly accesses Nvidia's
+hardware decoding silicon through standardized platform multimedia APIs
+like Direct3D 11 (D3D11VA) and DXVA2 on Windows, or VDPAU on Linux. This
+article outlines how this acceleration works, how to enable it, and how
+to verify that your Nvidia GPU is handling the decoding workload.</p>
+<h3 id="how-vlc-interacts-with-nvidia-nvdec">How VLC Interacts with
+Nvidia NVDEC</h3>
+<p>NVDEC (Nvidia Decoder) is the dedicated, fixed-function hardware
+engine built into modern Nvidia graphics cards. VLC relies on the
+FFmpeg/libavcodec multimedia libraries to process digital video. When
+hardware decoding is active, VLC calls the operating system's video
+acceleration framework, and the Nvidia display driver automatically
+routes the decoding instructions directly to the NVDEC chip.</p>
+<ul>
+<li><strong>On Windows:</strong> VLC uses <strong>D3D11VA</strong>
+(Direct3D 11 Video Acceleration) by default, with <strong>DXVA2</strong>
+(DirectX Video Acceleration 2) as an older fallback. Both route directly
+to NVDEC.</li>
+<li><strong>On Linux:</strong> VLC accesses Nvidia hardware decoding
+primarily through <strong>VDPAU</strong> (Video Decode and Presentation
+API for Unix) provided by the proprietary Nvidia Linux driver.</li>
+</ul>
+<h3 id="supported-video-codecs">Supported Video Codecs</h3>
+<p>Depending on the generation of your Nvidia GPU, NVDEC offloads
+decoding for several major codecs in VLC:</p>
+<ul>
+<li><strong>H.264 / AVC:</strong> Supported across virtually all modern
+Nvidia GPUs.</li>
+<li><strong>H.265 / HEVC:</strong> 8-bit and 10-bit decoding supported
+on GeForce GTX 950/960 and GTX 10-series or newer.</li>
+<li><strong>VP9:</strong> Supported on Pascal (GTX 10-series) and newer
+architectures.</li>
+<li><strong>AV1:</strong> Hardware decoding available on Ampere (RTX
+30-series), Ada Lovelace (RTX 40-series), and newer architectures.</li>
+</ul>
+<p>If a video uses an unsupported codec, resolution, or profile that
+exceeds your specific GPU's NVDEC capabilities, VLC automatically falls
+back to software (CPU) decoding.</p>
+<h3 id="how-to-enable-hardware-decoding-in-vlc">How to Enable Hardware
+Decoding in VLC</h3>
+<p>Hardware acceleration is typically enabled by default, but you can
+configure or enforce it using the following steps:</p>
+<ol type="1">
+<li>Open VLC Media Player.</li>
+<li>Navigate to <strong>Tools</strong> in the top menu and select
+<strong>Preferences</strong> (or press <code>Ctrl + P</code>).</li>
+<li>Click the <strong>Input / Codecs</strong> tab at the top.</li>
+<li>Locate the <strong>Hardware-accelerated decoding</strong>
+setting.</li>
+<li>Set the dropdown to <strong>Automatic</strong> or select
+<strong>Direct3D11 Video Acceleration</strong> explicitly.</li>
+<li>Click <strong>Save</strong> and restart VLC for the changes to
+apply.</li>
+</ol>
+<h3 id="how-to-verify-nvdec-is-active">How to Verify NVDEC is
+Active</h3>
+<p>You can confirm that your Nvidia graphics card is actively decoding
+video during playback:</p>
+<ul>
+<li><strong>Windows Task Manager:</strong> Press
+<code>Ctrl + Shift + Esc</code>, go to the <strong>Performance</strong>
+tab, and select your <strong>GPU</strong>. Play a high-resolution video
+in VLC. Look at the <strong>Video Decode</strong> graph; if NVDEC is
+working, you will see sustained activity on this engine while CPU usage
+remains low.</li>
+<li><strong>Nvidia Command Line:</strong> Open a terminal or Command
+Prompt and run <code>nvidia-smi dmon</code>. The <code>dec</code> column
+displays the current utilization percentage of the NVDEC engine.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

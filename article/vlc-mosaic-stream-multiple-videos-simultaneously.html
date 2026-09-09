@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLC Mosaic: Stream Multiple Videos Simultaneously - vlc</title>
+    <meta name="description" content="VLC Media Player can generate a visual mosaic displaying multiple simultaneous video streams on a single canvas. By using the built-in VideoLAN Manager (VLM) alongside VLC's mosaic bridge filter, users can composite several local video files, webcams, or">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/vlc-mosaic-stream-multiple-videos-simultaneously">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VLC Mosaic: Stream Multiple Videos Simultaneously - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/vlc-mosaic-stream-multiple-videos-simultaneously" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player can generate a visual mosaic displaying multiple simultaneous video streams on a single canvas. By using the built-in VideoLAN Manager (VLM) alongside VLC's mosaic bridge filter, users can composite several local video files, webcams, or" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="vlc-mosaic-stream-multiple-videos-simultaneously">VLC Mosaic:
+Stream Multiple Videos Simultaneously</h1>
+<p>VLC Media Player can generate a visual mosaic displaying multiple
+simultaneous video streams on a single canvas. By using the built-in
+VideoLAN Manager (VLM) alongside VLC's mosaic bridge filter, users can
+composite several local video files, webcams, or network streams (such
+as RTSP feeds from security cameras) into a customized grid layout. This
+guide outlines how the VLC mosaic feature works, provides a functional
+configuration template, and explains how to launch your multi-stream
+display.</p>
+<h2 id="how-the-vlc-mosaic-system-works">How the VLC Mosaic System
+Works</h2>
+<p>VLC constructs a mosaic using three primary elements:</p>
+<ol type="1">
+<li><strong>A Background Canvas:</strong> A base video or static image
+stream that defines the overall resolution, aspect ratio, and frame rate
+of the output window.</li>
+<li><strong>Sub-Streams:</strong> Individual video sources (files,
+capture devices, or network URLs) routed into VLC via mosaic bridge
+sub-filters.</li>
+<li><strong>The VideoLAN Manager (VLM):</strong> VLC's internal control
+interface that manages multiple media inputs, synchronizes them, and
+positions each video within predefined coordinates on the background
+canvas.</li>
+</ol>
+<h2 id="creating-the-vlm-configuration-file">Creating the VLM
+Configuration File</h2>
+<p>The most reliable way to configure a mosaic is by writing a VLM
+script file (<code>mosaic.vlm</code>).</p>
+<p>Below is an example configuration that positions two video streams
+side-by-side onto a 1920x1080 background:</p>
+<pre class="text"><code># Define the background canvas
+new background broadcast enabled
+setup background input &quot;fake://&quot;
+setup background option fake-file=&quot;background.png&quot;
+setup background option fake-width=1920
+setup background option fake-height=1080
+setup background option fake-fps=25
+setup background output #mosaic-bridge{id=1}:bridge-in:display
+
+# Define Stream 1 (Left side)
+new stream1 broadcast enabled
+setup stream1 input &quot;rtsp://camera1.local/stream&quot;
+setup stream1 output #duplicate{dst=mosaic-bridge{id=stream1,width=960,height=540,x=0,y=270},select=video}
+
+# Define Stream 2 (Right side)
+new stream2 broadcast enabled
+setup stream2 input &quot;rtsp://camera2.local/stream&quot;
+setup stream2 output #duplicate{dst=mosaic-bridge{id=stream2,width=960,height=540,x=960,y=270},select=video}
+
+# Control execution
+control background play
+control stream1 play
+control stream2 play</code></pre>
+<h3 id="key-parameters">Key Parameters:</h3>
+<ul>
+<li><strong><code>width</code> and <code>height</code></strong>: The
+target display size for each individual sub-stream.</li>
+<li><strong><code>x</code> and <code>y</code></strong>: The pixel offset
+from the top-left corner of the background where each sub-stream
+renders.</li>
+<li><strong><code>input</code></strong>: Can be a local file path,
+direct capture device, or streaming protocol (<code>rtsp://</code>,
+<code>http://</code>, etc.).</li>
+</ul>
+<h2 id="launching-the-mosaic-via-command-line">Launching the Mosaic via
+Command Line</h2>
+<p>Because mosaic setups require parameters not accessible through the
+standard graphical user interface, you must execute VLC via the command
+line or terminal.</p>
+<p>Run the following command, replacing the paths with your actual
+installation and file locations:</p>
+<p><strong>Windows:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vlc.exe -<span class="at">-vlm-conf</span> mosaic.vlm -<span class="at">-mosaic-width</span>=1920 -<span class="at">-mosaic-height</span>=1080 -<span class="at">-mosaic-keep-aspect-ratio</span></span></code></pre></div>
+<p><strong>Linux / macOS:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vlc</span> <span class="at">--vlm-conf</span> mosaic.vlm <span class="at">--mosaic-width</span> 1920 <span class="at">--mosaic-height</span> 1080 <span class="at">--mosaic-keep-aspect-ratio</span></span></code></pre></div>
+<h2 id="performance-and-resource-management">Performance and Resource
+Management</h2>
+<ul>
+<li><strong>Hardware Decoding:</strong> Decoding multiple
+high-resolution (1080p or 4K) streams simultaneously places a heavy load
+on the CPU and GPU. For four or more streams, lower the source
+resolution or frame rates at the stream source if playback
+stutters.</li>
+<li><strong>Network Bandwidth:</strong> If displaying remote RTSP or
+HTTP feeds, ensure your local network interface has sufficient bandwidth
+to process multiple concurrent streams without packet loss.</li>
+<li><strong>Audio Handling:</strong> By default, mosaic configurations
+only bridge video (<code>select=video</code>). Audio channels from
+multiple simultaneous streams can conflict; it is best practice to mute
+sub-streams or route only one specific stream's audio to the
+output.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

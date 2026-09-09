@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLC Audio Waveform Visualization Guide - vlc</title>
+    <meta name="description" content="VLC Media Player supports the generation of real-time audio waveform visualizations during playback, though it cannot generate static waveform image files like dedicated digital audio workstations. Through its built-in visualization suite, VLC allows use">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/vlc-audio-waveform-visualization-guide">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VLC Audio Waveform Visualization Guide - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/vlc-audio-waveform-visualization-guide" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player supports the generation of real-time audio waveform visualizations during playback, though it cannot generate static waveform image files like dedicated digital audio workstations. Through its built-in visualization suite, VLC allows use" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="vlc-audio-waveform-visualization-guide">VLC Audio Waveform
+Visualization Guide</h1>
+<p>VLC Media Player supports the generation of real-time audio waveform
+visualizations during playback, though it cannot generate static
+waveform image files like dedicated digital audio workstations. Through
+its built-in visualization suite, VLC allows users to view live waveform
+animations, customize audio effects, and even render those
+visualizations into an exported video file. This guide explains how VLC
+handles waveform visualizations, how to enable them, and the player's
+capabilities and limitations regarding audio graphics.</p>
+<h2 id="enabling-real-time-audio-waveforms-in-vlc">Enabling Real-Time
+Audio Waveforms in VLC</h2>
+<p>VLC provides a real-time waveform effect known as "Scope," which
+operates like an oscilloscope directly displaying the incoming sound
+wave.</p>
+<p>To enable the waveform visualization during playback:</p>
+<ol type="1">
+<li>Open VLC Media Player and start playing your audio file.</li>
+<li>Click on the <strong>Audio</strong> menu in the top navigation
+bar.</li>
+<li>Hover over <strong>Visualizations</strong>.</li>
+<li>Select <strong>Scope</strong> from the list of options.</li>
+</ol>
+<p>Once selected, VLC will open a video window displaying a live,
+reactive audio waveform that syncs with the track currently playing.
+Other options in this menu, such as <strong>Spectrum</strong> or
+<strong>Spectrometer</strong>, display frequency distributions (bars)
+rather than direct wave amplitudes.</p>
+<h2 id="exporting-an-audio-file-with-a-waveform-video">Exporting an
+Audio File with a Waveform Video</h2>
+<p>VLC can also generate and hardcode an audio waveform into an MP4 or
+other video format, which is ideal for uploading audio tracks to
+video-sharing platforms.</p>
+<ol type="1">
+<li>Open VLC and go to <strong>Media</strong> &gt; <strong>Convert /
+Save</strong>.</li>
+<li>Click <strong>Add</strong> to select your audio file, then click
+<strong>Convert / Save</strong>.</li>
+<li>Choose your desired output video profile (e.g., <em>Video - H.264 +
+MP3 (MP4)</em>).</li>
+<li>Click the <strong>Wrench (Edit Profile)</strong> icon next to the
+profile dropdown.</li>
+<li>Go to the <strong>Audio codec</strong> tab, check
+<strong>Audio</strong>, and ensure the codec settings are intact.</li>
+<li>Under advanced preferences or via command-line transcoding, specify
+the visualization filter by setting <code>--audio-visual=visual</code>
+and <code>--effect-list=scope</code>.</li>
+<li>Choose a destination file and click <strong>Start</strong> to
+transcode the audio into a video with the embedded waveform.</li>
+</ol>
+<h2 id="capabilities-and-limitations">Capabilities and Limitations</h2>
+<ul>
+<li><strong>Supported:</strong> Real-time visual playback,
+oscilloscope-style waveforms ("Scope"), frequency spectrum analyzers,
+and transcoding audio to video with live visuals.</li>
+<li><strong>Not Supported:</strong> VLC cannot generate a static,
+full-track waveform overview image (such as the timeline previews found
+in SoundCloud or audio editors). For static PNG or SVG waveform
+generation, command-line utilities like FFmpeg (via the
+<code>showwavespic</code> filter) or dedicated editors like Audacity are
+required.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

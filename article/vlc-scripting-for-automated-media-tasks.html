@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLC Scripting for Automated Media Tasks - vlc</title>
+    <meta name="description" content="VLC media player natively supports scripting and automation to handle complex media processing, scheduled broadcasting, and batch operations. Users can automate tasks through VLC's integrated Lua scripting engine, extensive command-line interface (CLI),">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/vlc-scripting-for-automated-media-tasks">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VLC Scripting for Automated Media Tasks - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/vlc-scripting-for-automated-media-tasks" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC media player natively supports scripting and automation to handle complex media processing, scheduled broadcasting, and batch operations. Users can automate tasks through VLC's integrated Lua scripting engine, extensive command-line interface (CLI)," />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="vlc-scripting-for-automated-media-tasks">VLC Scripting for
+Automated Media Tasks</h1>
+<p>VLC media player natively supports scripting and automation to handle
+complex media processing, scheduled broadcasting, and batch operations.
+Users can automate tasks through VLC's integrated Lua scripting engine,
+extensive command-line interface (CLI), the VideoLAN Manager (VLM), and
+external programming language bindings using LibVLC. This article
+outlines the primary methods available for automating media workflows
+with VLC and how each approach functions.</p>
+<h3 id="command-line-interface-cli-automation">Command-Line Interface
+(CLI) Automation</h3>
+<p>The most direct way to automate VLC is through its command-line
+interface. Using shell scripts (Bash, PowerShell, or batch files), you
+can execute VLC in a headless mode using the <code>cvlc</code> command
+or by specifying <code>-I dummy</code>.</p>
+<p>Command-line automation is ideal for:</p>
+<ul>
+<li><strong>Batch Transcoding:</strong> Converting libraries of video or
+audio files from one codec or container to another without user
+intervention.</li>
+<li><strong>Stream Relaying:</strong> Automatically capturing an
+incoming RTSP, HTTP, or capture-card input and re-streaming it across a
+local network.</li>
+<li><strong>Frame Extraction:</strong> Automatically saving frames at
+designated intervals for preview generation or surveillance logs.</li>
+</ul>
+<h3 id="built-in-lua-scripting">Built-in Lua Scripting</h3>
+<p>VLC includes an integrated Lua 5.1/5.2 interpreter designed for
+extending functionality. Lua scripts interact directly with the VLC
+internals via pre-defined VLC Lua APIs.</p>
+<p>Lua scripts in VLC generally fall into four categories:</p>
+<ul>
+<li><strong>Extensions:</strong> Add custom dialogs and interactive
+features to control media playback and queueing.</li>
+<li><strong>Intf (Interfaces):</strong> Create custom user interfaces or
+headless control servers (such as HTTP or telnet endpoints).</li>
+<li><strong>Parsers and Fetchers:</strong> Automate the extraction of
+metadata, subtitles, or direct media URLs from streaming sites.</li>
+<li><strong>Service Discovery:</strong> Automatically query network
+sources or APIs to populate the playlist dynamically.</li>
+</ul>
+<p>While Lua provides granular access to the playlist and player states,
+it has limited direct control over low-level transcode filter graphs
+compared to LibVLC or the CLI.</p>
+<h3 id="remote-control-and-telnet-interfaces">Remote Control and Telnet
+Interfaces</h3>
+<p>VLC includes built-in remote control (<code>rc</code>) and Telnet
+network interfaces. By starting VLC with these modules enabled (e.g.,
+<code>--extraintf telnet</code> or <code>--extraintf rc</code>),
+external scripts written in languages like Python, Node.js, or Go can
+connect via TCP sockets to send real-time commands. This enables
+automated playout schedules, dynamic playlist insertion, and automated
+volume or track adjustments based on external triggers.</p>
+<h3 id="videolan-manager-vlm">VideoLAN Manager (VLM)</h3>
+<p>For complex multi-stream operations, VLC includes the VideoLAN
+Manager (VLM). Controlled via configuration files, the Telnet interface,
+or HTTP, VLM allows administrators to design automated broadcast
+schedules. It supports:</p>
+<ul>
+<li><strong>Video on Demand (VoD):</strong> Automatically serving media
+streams upon client request.</li>
+<li><strong>Broadcast Schedules:</strong> Designing automated 24/7
+playback loops that switch inputs between live feeds and prerecorded
+media at specific times.</li>
+</ul>
+<h3 id="libvlc-api-bindings">LibVLC API Bindings</h3>
+<p>When scripting inside the player is insufficient, the underlying
+engine—LibVLC—can be integrated directly into programming languages.
+Official and community-maintained bindings exist for Python
+(<code>python-vlc</code>), C# (<code>LibVLCSharp</code>), Java, and
+C++.</p>
+<p>Using LibVLC bindings gives developers complete programmatic control
+over media pipelines, allowing the integration of VLC's decoding and
+streaming capabilities into custom automated software architectures.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

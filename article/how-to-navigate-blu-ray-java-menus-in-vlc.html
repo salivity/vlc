@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Navigate Blu-ray Java Menus in VLC - vlc</title>
+    <meta name="description" content="Navigating interactive Blu-ray menus (BD-J) in VLC Media Player requires the correct Java environment installed on your system, proper playback settings within the player, and the use of keyboard-based navigation rather than mouse controls. This guide co">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-navigate-blu-ray-java-menus-in-vlc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Navigate Blu-ray Java Menus in VLC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-navigate-blu-ray-java-menus-in-vlc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Navigating interactive Blu-ray menus (BD-J) in VLC Media Player requires the correct Java environment installed on your system, proper playback settings within the player, and the use of keyboard-based navigation rather than mouse controls. This guide co" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-navigate-blu-ray-java-menus-in-vlc">How to Navigate
+Blu-ray Java Menus in VLC</h1>
+<p>Navigating interactive Blu-ray menus (BD-J) in VLC Media Player
+requires the correct Java environment installed on your system, proper
+playback settings within the player, and the use of keyboard-based
+navigation rather than mouse controls. This guide covers how to set up
+your system for BD-J compatibility, launch your disc with menu support
+enabled, and properly interact with the menu interface.</p>
+<h3 id="1-install-the-matching-java-runtime-environment-jre">1. Install
+the Matching Java Runtime Environment (JRE)</h3>
+<p>Blu-ray interactive menus run on Java (BD-J). For VLC to process
+these menus, a compatible Java Runtime Environment must be installed and
+accessible.</p>
+<ul>
+<li><strong>Match Architectures:</strong> If you run 64-bit VLC, you
+must install 64-bit Java. If you run 32-bit VLC, you must install 32-bit
+Java. A mismatch is the primary reason BD-J menus fail to load.</li>
+<li><strong>Install JRE/JDK:</strong> Download and install the latest
+Java Runtime Environment (JRE) or Java Development Kit (JDK) from Oracle
+or an open-source distribution like Adoptium (Temurin).</li>
+<li><strong>System Path:</strong> Ensure Java is added to your system’s
+PATH environment variable so VLC can detect it automatically upon
+launch.</li>
+</ul>
+<h3 id="2-configure-vlc-to-enable-disc-menus">2. Configure VLC to Enable
+Disc Menus</h3>
+<p>VLC offers an option to bypass menus and play the main title
+directly, which is sometimes enabled by default. To access interactive
+menus, you must ensure this feature is turned off.</p>
+<ol type="1">
+<li>Launch VLC Media Player.</li>
+<li>Click on <strong>Media</strong> in the top menu bar and select
+<strong>Open Disc</strong> (or press <code>Ctrl + D</code>).</li>
+<li>Under the <strong>Disc</strong> tab, choose the
+<strong>Blu-ray</strong> radio button.</li>
+<li>Ensure the <strong>No disc menus</strong> checkbox is
+<strong>unchecked</strong>.</li>
+<li>Select your Blu-ray drive under <strong>Disc device</strong>.</li>
+<li>Click <strong>Play</strong>.</li>
+</ol>
+<h3 id="3-navigate-using-keyboard-controls-instead-of-the-mouse">3.
+Navigate Using Keyboard Controls Instead of the Mouse</h3>
+<p>Unlike DVD menus, which often accept direct mouse clicks, BD-J menus
+in VLC frequently suffer from cursor desynchronization or completely
+ignore mouse inputs. Use keyboard controls for reliable navigation:</p>
+<ul>
+<li><strong>Arrow Keys (Up, Down, Left, Right):</strong> Move between
+interactive buttons, chapters, and setup options.</li>
+<li><strong>Enter:</strong> Confirm or activate the currently
+highlighted menu item.</li>
+<li><strong>VLC Navigation Keys:</strong>
+<ul>
+<li>Go to <strong>Playback &gt; Menu</strong> in the VLC toolbar to
+trigger options like <strong>Root Menu</strong>, <strong>Title
+Menu</strong>, or <strong>Popup Menu</strong>.</li>
+<li>Use the default hotkeys (often mapped to the arrow keys and
+<code>Enter</code>) to control dynamic pop-up menus during playback
+without stopping the video.</li>
+</ul></li>
+</ul>
+<h3 id="4-troubleshooting-menu-freezes-and-failures">4. Troubleshooting
+Menu Freezes and Failures</h3>
+<ul>
+<li><strong>Black Screen on Menu Load:</strong> This typically indicates
+VLC cannot find your Java installation or the Java version is
+incompatible. Restart VLC after installing Java, or set the
+<code>JAVA_HOME</code> system variable to point directly to your Java
+installation folder.</li>
+<li><strong>Encrypted Discs:</strong> Commercial Blu-rays require the
+dynamic AACS library (<code>libaacs</code>) and a current
+<code>KEYDB.cfg</code> key database installed in your system
+directories. Without these, encrypted discs will fail to decrypt before
+reaching the BD-J menu.</li>
+<li><strong>Bypass When Stuck:</strong> If a specific BD-J menu refuses
+to render properly despite having Java installed, return to
+<strong>Media &gt; Open Disc</strong>, check <strong>No disc
+menus</strong>, and use <strong>Playback &gt; Title</strong> from the
+top menu to play the main movie directly.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

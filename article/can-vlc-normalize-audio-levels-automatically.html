@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can VLC Normalize Audio Levels Automatically? - vlc</title>
+    <meta name="description" content="This article provides a comprehensive guide on how to automatically normalize dynamic audio levels in VLC Media Player. We will explore VLC's built-in audio normalization features, specifically focusing on the "Normalize volume" setting and the advanced">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/can-vlc-normalize-audio-levels-automatically">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Can VLC Normalize Audio Levels Automatically? - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/can-vlc-normalize-audio-levels-automatically" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a comprehensive guide on how to automatically normalize dynamic audio levels in VLC Media Player. We will explore VLC's built-in audio normalization features, specifically focusing on the "Normalize volume" setting and the advanced" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="can-vlc-normalize-audio-levels-automatically">Can VLC Normalize
+Audio Levels Automatically?</h1>
+<p>This article provides a comprehensive guide on how to automatically
+normalize dynamic audio levels in VLC Media Player. We will explore
+VLC's built-in audio normalization features, specifically focusing on
+the "Normalize volume" setting and the advanced "Audio Compressor" tool.
+By the end of this guide, you will know exactly how to eliminate sudden,
+loud volume spikes and boost quiet dialogue for a much smoother
+listening experience.</p>
+<hr />
+<h2 id="understanding-vlcs-audio-normalization">Understanding VLC's
+Audio Normalization</h2>
+<p>Have you ever found yourself constantly adjusting the volume while
+watching a movie because the action scenes are deafeningly loud but the
+dialogue is barely a whisper? This common issue stems from a high
+dynamic range in the audio track. VLC Media Player offers built-in tools
+designed to automatically compress this dynamic range, bringing the
+quietest and loudest parts of the audio closer together.</p>
+<p>While VLC does not have a "perfect" one-click fix for every single
+audio file, it features two distinct methods to achieve automated volume
+leveling: <strong>Simple Volume Normalization</strong> and the
+<strong>Advanced Audio Compressor</strong>.</p>
+<hr />
+<h2 id="method-1-enabling-simple-volume-normalization">Method 1:
+Enabling Simple Volume Normalization</h2>
+<p>The quickest way to level out your audio is by enabling VLC’s native
+volume normalization setting. This feature automatically caps sudden
+volume spikes to protect your hearing and your speakers.</p>
+<p>To enable simple normalization, follow these steps:</p>
+<ol type="1">
+<li>Open VLC Media Player.</li>
+<li>In the top menu bar, click on <strong>Tools</strong> and select
+<strong>Preferences</strong> (or press <strong>Ctrl + P</strong> on
+Windows / <strong>Cmd + ,</strong> on Mac).</li>
+<li>At the bottom left corner of the Preferences window, under <em>Show
+settings</em>, make sure <strong>Simple</strong> is selected.</li>
+<li>Click on the <strong>Audio</strong> tab at the top.</li>
+<li>Look for the <em>Effects</em> section and check the box next to
+<strong>Normalize volume to:</strong>.</li>
+<li>You can adjust the numerical value next to the checkbox (typically
+set between 1.5 and 2.0) to fine-tune how aggressively VLC levels the
+sound.</li>
+<li>Click <strong>Save</strong> and restart VLC for the changes to take
+effect.</li>
+</ol>
+<hr />
+<h2 id="method-2-using-the-advanced-audio-compressor">Method 2: Using
+the Advanced Audio Compressor</h2>
+<p>If the simple normalization setting doesn't provide enough balance,
+VLC features a highly customizable <strong>Audio Compressor</strong>.
+This tool acts as a dynamic range compressor, actively boosting quiet
+audio signals while clamping down on excessively loud ones in
+real-time.</p>
+<p>To activate and configure the Audio Compressor:</p>
+<ol type="1">
+<li>Play your video or audio file in VLC.</li>
+<li>Click on <strong>Tools</strong> in the top menu and select
+<strong>Effects and Filters</strong> (or press <strong>Ctrl +
+E</strong>).</li>
+<li>Navigate to the <strong>Audio Effects</strong> tab, then select the
+<strong>Compressor</strong> sub-tab.</li>
+<li>Check the box at the top to <strong>Enable</strong> the
+compressor.</li>
+<li>Adjust the sliders to customize the compression behavior. For
+standard movie watching, try these baseline settings:</li>
+</ol>
+<ul>
+<li><strong>RMS/peak:</strong> Move closer to Peak to handle sudden
+bursts.</li>
+<li><strong>Attack time:</strong> Set relatively low (around 10ms to
+25ms) so the compressor reacts quickly to loud noises.</li>
+<li><strong>Release time:</strong> Set moderately (around 300ms to
+500ms) so the volume transitions back smoothly.</li>
+<li><strong>Threshold:</strong> Lower this slider if you want the
+compressor to start working on quieter sounds.</li>
+<li><strong>Ratio:</strong> Set this around 4:1 or 5:1 to significantly
+flatten out large volume differences.</li>
+<li><strong>Makeup gain:</strong> Boost this slightly if the overall
+audio becomes too quiet after compression.</li>
+</ul>
+<ol start="6" type="1">
+<li>Click <strong>Close</strong>. These settings will apply immediately
+to your current playback session.</li>
+</ol></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

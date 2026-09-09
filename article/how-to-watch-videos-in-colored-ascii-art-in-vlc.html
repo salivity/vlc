@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Watch Videos in Colored ASCII Art in VLC - vlc</title>
+    <meta name="description" content="VLC Media Player can natively render any standard video entirely as colored ASCII art using its built-in video output module powered by the libcaca library. This article explains how VLC handles text-based video rendering, provides the step-by-step proce">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-watch-videos-in-colored-ascii-art-in-vlc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Watch Videos in Colored ASCII Art in VLC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-watch-videos-in-colored-ascii-art-in-vlc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player can natively render any standard video entirely as colored ASCII art using its built-in video output module powered by the libcaca library. This article explains how VLC handles text-based video rendering, provides the step-by-step proce" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-watch-videos-in-colored-ascii-art-in-vlc">How to Watch
+Videos in Colored ASCII Art in VLC</h1>
+<p>VLC Media Player can natively render any standard video entirely as
+colored ASCII art using its built-in video output module powered by the
+libcaca library. This article explains how VLC handles text-based video
+rendering, provides the step-by-step process to enable the feature
+within the software settings, and shows how to revert to standard
+playback when finished.</p>
+<h2 id="yes-vlc-supports-colored-ascii-playback">Yes, VLC Supports
+Colored ASCII Playback</h2>
+<p>VLC Media Player includes an integrated visual rendering engine that
+translates pixels into text characters in real time. Instead of
+outputting frames via standard graphic APIs like DirectX, OpenGL, or
+Metal, VLC can route the video stream through <strong>libcaca</strong>
+(Color AsCii Art library). This converts video frames into colored
+alphanumeric characters and symbols, maintaining motion, color fidelity,
+and audio synchronization.</p>
+<h2 id="how-to-enable-colored-ascii-output-in-vlc">How to Enable Colored
+ASCII Output in VLC</h2>
+<p>You can enable colored ASCII art video directly within the VLC
+interface without downloading third-party plugins.</p>
+<ol type="1">
+<li><strong>Open VLC Media Player.</strong></li>
+<li>Click on <strong>Tools</strong> in the top menu bar and select
+<strong>Preferences</strong> (or press <code>Ctrl + P</code> on
+Windows/Linux, <code>Cmd + ,</code> on macOS).</li>
+<li>In the Preferences window, select the <strong>Video</strong>
+tab.</li>
+<li>Locate the <strong>Output</strong> setting (set to "Automatic" by
+default).</li>
+<li>Click the drop-down menu and select <strong>Color ASCII art video
+output</strong>.</li>
+<li>Click <strong>Save</strong> at the bottom right.</li>
+<li><strong>Restart VLC</strong> for the changes to take effect.</li>
+</ol>
+<p>When you open any standard video file (MP4, MKV, AVI, etc.), VLC will
+render the video entirely in colored ASCII characters inside the
+playback window.</p>
+<h2 id="running-ascii-video-via-command-line">Running ASCII Video via
+Command Line</h2>
+<p>For advanced users or terminal environments, VLC can be launched
+directly into ASCII mode via the command line:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vlc</span> <span class="at">--vout</span> caca <span class="st">&quot;path/to/your/video.mp4&quot;</span></span></code></pre></div>
+<p>On Linux systems running in a pure terminal environment without an X
+display server, this command allows video playback directly inside the
+shell console.</p>
+<h2 id="tips-for-the-best-ascii-viewing-experience">Tips for the Best
+ASCII Viewing Experience</h2>
+<ul>
+<li><strong>Contrast Matters:</strong> Videos with high contrast, bold
+shapes, and vibrant colors translate best into ASCII characters. Dark
+scenes or subtle gradients may appear muddy.</li>
+<li><strong>Aspect Ratio:</strong> Resizing the player window
+dynamically alters the character grid resolution. Maximizing the window
+increases the character density, providing sharper details.</li>
+</ul>
+<h2 id="how-to-disable-ascii-mode">How to Disable ASCII Mode</h2>
+<p>To restore normal video rendering:</p>
+<ol type="1">
+<li>Open <strong>Tools</strong> &gt; <strong>Preferences</strong>.</li>
+<li>Go to the <strong>Video</strong> tab.</li>
+<li>Change the <strong>Output</strong> dropdown back to
+<strong>Automatic</strong>.</li>
+<li>Click <strong>Save</strong> and restart VLC.</li>
+</ol></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

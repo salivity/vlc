@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can VLC Broadcast a Webcam Feed Over a Local Network? - vlc</title>
+    <meta name="description" content="Yes, VLC Media Player can broadcast a live webcam feed over a local network, allowing other devices on the same Wi-Fi or Ethernet network to stream the video in real time. This process involves configuring VLC as a streaming server by capturing the video">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/can-vlc-broadcast-a-webcam-feed-over-a-local-network">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Can VLC Broadcast a Webcam Feed Over a Local Network? - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/can-vlc-broadcast-a-webcam-feed-over-a-local-network" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Yes, VLC Media Player can broadcast a live webcam feed over a local network, allowing other devices on the same Wi-Fi or Ethernet network to stream the video in real time. This process involves configuring VLC as a streaming server by capturing the video" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="can-vlc-broadcast-a-webcam-feed-over-a-local-network">Can VLC
+Broadcast a Webcam Feed Over a Local Network?</h1>
+<p>Yes, VLC Media Player can broadcast a live webcam feed over a local
+network, allowing other devices on the same Wi-Fi or Ethernet network to
+stream the video in real time. This process involves configuring VLC as
+a streaming server by capturing the video and audio inputs from your
+webcam and broadcasting them via a network protocol like HTTP, RTSP, or
+UDP. While the setup requires navigating through VLC's advanced media
+settings, it is a highly effective, open-source solution for creating
+local security monitors, DIY baby cams, or basic video feeds without
+relying on third-party cloud services.</p>
+<h2 id="prerequisites-for-local-streaming">Prerequisites for Local
+Streaming</h2>
+<p>Before configuring the broadcast, ensure you have the necessary
+components ready on your host computer:</p>
+<ul>
+<li>A functional webcam (integrated or connected via USB).</li>
+<li>The latest version of VLC Media Player installed.</li>
+<li>A stable local network connection (both the host and client devices
+must be on the same network).</li>
+<li>The local IP address of the host computer (needed by client devices
+to connect to the stream).</li>
+</ul>
+<h2 id="step-by-step-configuration-guide">Step-by-Step Configuration
+Guide</h2>
+<h3 id="1-open-the-capture-device-settings">1. Open the Capture Device
+Settings</h3>
+<p>Launch VLC Media Player on the host computer. Navigate to the top
+menu bar, click on <strong>Media</strong>, and select
+<strong>Stream...</strong> from the drop-down menu (or press
+<code>Ctrl + S</code> on Windows).</p>
+<h3 id="2-select-your-webcam-input">2. Select Your Webcam Input</h3>
+<p>In the Open Media window, click on the <strong>Capture
+Device</strong> tab at the top. Change the <strong>Capture mode</strong>
+drop-down menu to <strong>DirectShow</strong>. Under the <strong>Device
+selection</strong> section, choose your webcam from the <strong>Video
+device name</strong> drop-down list. If you want to include audio,
+select your microphone from the <strong>Audio device name</strong>
+drop-down list. Click the <strong>Stream</strong> button at the bottom
+of the window to proceed.</p>
+<h3 id="3-set-the-destination-and-protocol">3. Set the Destination and
+Protocol</h3>
+<p>A Source Setup window will appear showing the input string. Click
+<strong>Next</strong>. In the Destination Setup window, you need to
+choose how the video will be broadcasted. Check the box for
+<strong>Display locally</strong> if you want to see the webcam feed on
+the host computer while it streams.</p>
+<p>Click the <strong>New destination</strong> drop-down menu, select
+<strong>HTTP</strong> (the easiest protocol for local networks), and
+click <strong>Add</strong>. You can leave the default port as
+<code>8080</code> and the path as <code>/</code>. Click
+<strong>Next</strong>.</p>
+<h3 id="4-configure-transcoding-options">4. Configure Transcoding
+Options</h3>
+<p>In the Transcoding Options window, ensure the <strong>Activate
+Transcoding</strong> box is checked. Select a profile that balances
+quality and network bandwidth, such as <strong>Video - H.264 + MP3
+(MP4)</strong>. This ensures the stream is compressed efficiently and is
+compatible with most receiving devices. Click <strong>Next</strong>.</p>
+<h3 id="5-finalize-and-start-the-stream">5. Finalize and Start the
+Stream</h3>
+<p>The final window shows the generated stream output string. Click the
+<strong>Stream</strong> button in the bottom right corner. VLC is now
+broadcasting your webcam feed over your local network.</p>
+<h2 id="how-to-view-the-stream-on-another-device">How to View the Stream
+on Another Device</h2>
+<p>To watch the live webcam feed on a different computer, smartphone, or
+tablet connected to the same network, follow these steps:</p>
+<ol type="1">
+<li>Open VLC Media Player (or any compatible network video player) on
+the client device.</li>
+<li>Go to <strong>Media</strong> &gt; <strong>Open Network
+Stream...</strong> (or press <code>Ctrl + N</code>).</li>
+<li>Enter the network URL using the host computer's IP address and the
+port designated during setup. The format will look like this:
+<code>http://[Host-IP-Address]:8080</code> (for example,
+<code>http://192.168.1.5:8080</code>).</li>
+<li>Click <strong>Play</strong> to start viewing the live
+broadcast.</li>
+</ol></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play Raw YUV Video Files in VLC - vlc</title>
+    <meta name="description" content="VLC Media Player does support playing raw, uncompressed YUV video files, but it cannot play them automatically through standard double-clicking or drag-and-drop actions. Because raw YUV files contain only raw pixel samples without a container header to s">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-play-raw-yuv-video-files-in-vlc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Play Raw YUV Video Files in VLC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-play-raw-yuv-video-files-in-vlc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player does support playing raw, uncompressed YUV video files, but it cannot play them automatically through standard double-clicking or drag-and-drop actions. Because raw YUV files contain only raw pixel samples without a container header to s" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-play-raw-yuv-video-files-in-vlc">How to Play Raw YUV
+Video Files in VLC</h1>
+<p>VLC Media Player does support playing raw, uncompressed YUV video
+files, but it cannot play them automatically through standard
+double-clicking or drag-and-drop actions. Because raw YUV files contain
+only raw pixel samples without a container header to specify resolution,
+frame rate, or chroma format, VLC requires you to explicitly define
+these parameters before playback will work.</p>
+<h3 id="why-raw-yuv-needs-extra-configuration">Why Raw YUV Needs Extra
+Configuration</h3>
+<p>Standard video formats (such as MP4, MKV, or AVI) include metadata
+that informs the media player about the video's width, height, aspect
+ratio, frame rate, and color space. Raw YUV files (<code>.yuv</code>)
+completely lack this metadata. If you attempt to open a raw YUV file
+directly in VLC without providing these details, VLC either fails to
+open the file or displays garbled noise.</p>
+<h3 id="method-1-using-the-command-line-recommended">Method 1: Using the
+Command Line (Recommended)</h3>
+<p>The fastest and most reliable way to play a raw YUV stream is by
+launching VLC from your system terminal or command prompt with the
+<code>rawvid</code> demuxer parameters.</p>
+<p>Open Terminal (macOS/Linux) or Command Prompt (Windows) and enter the
+command using your specific video specifications:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vlc</span> <span class="at">--demux</span> rawvid <span class="at">--rawvid-width</span> 1920 <span class="at">--rawvid-height</span> 1080 <span class="at">--rawvid-chroma</span> I420 <span class="at">--rawvid-fps</span> 30 video.yuv</span></code></pre></div>
+<h4 id="key-command-parameters">Key Command Parameters:</h4>
+<ul>
+<li><code>--demux rawvid</code>: Forces VLC to use its raw video demuxer
+instead of attempting automatic container detection.</li>
+<li><code>--rawvid-width</code>: The horizontal resolution in pixels
+(e.g., <code>1920</code>, <code>1280</code>, <code>3840</code>).</li>
+<li><code>--rawvid-height</code>: The vertical resolution in pixels
+(e.g., <code>1080</code>, <code>720</code>, <code>2160</code>).</li>
+<li><code>--rawvid-chroma</code>: The pixel layout and chroma
+subsampling format. Common values include:
+<ul>
+<li><code>I420</code> (YUV 4:2:0 planar, standard)</li>
+<li><code>YV12</code> (YUV 4:2:0 planar, inverted chroma planes)</li>
+<li><code>NV12</code> (YUV 4:2:0 semi-planar)</li>
+<li><code>UYVY</code> or <code>YUY2</code> (YUV 4:2:2 packed)</li>
+</ul></li>
+<li><code>--rawvid-fps</code>: The playback frame rate (e.g.,
+<code>24</code>, <code>30</code>, <code>60</code>).</li>
+</ul>
+<h3 id="method-2-configuring-the-graphical-interface-gui">Method 2:
+Configuring the Graphical Interface (GUI)</h3>
+<p>If you prefer using the graphical interface, you can permanently set
+the raw video defaults within VLC’s preferences:</p>
+<ol type="1">
+<li>Open VLC and navigate to <strong>Tools</strong> &gt;
+<strong>Preferences</strong> (or <strong>VLC</strong> &gt;
+<strong>Settings</strong> on macOS).</li>
+<li>At the bottom of the window, locate <strong>Show settings</strong>
+and select the <strong>All</strong> radio button to access advanced
+settings.</li>
+<li>In the left sidebar, expand <strong>Input / Codecs</strong> and
+click on <strong>Demuxers</strong>.</li>
+<li>Change the <strong>Demux module</strong> dropdown from
+<em>Automatic</em> to <strong>Raw video demuxer</strong>.</li>
+<li>In the left sidebar under <strong>Demuxers</strong>, click directly
+on <strong>Raw video</strong>.</li>
+<li>Enter your video's width, height, chroma format (FourCC), and frame
+rate into the corresponding fields.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>Once saved, open your <code>.yuv</code> file directly in VLC.</p>
+<p><em>Note: Remember to revert the Demux module back to "Automatic"
+when you are finished, otherwise VLC will attempt to treat all future
+media files as raw video streams.</em></p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

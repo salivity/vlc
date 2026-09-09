@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Does VLC Support WebVTT Subtitles Natively? - vlc</title>
+    <meta name="description" content="VLC Media Player natively supports rendering subtitles in the WebVTT (.vtt) format, allowing users to load and view these text tracks directly without requiring external plugins or file conversions. While modern releases handle standard WebVTT files seam">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/does-vlc-support-webvtt-subtitles-natively">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Does VLC Support WebVTT Subtitles Natively? - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/does-vlc-support-webvtt-subtitles-natively" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player natively supports rendering subtitles in the WebVTT (.vtt) format, allowing users to load and view these text tracks directly without requiring external plugins or file conversions. While modern releases handle standard WebVTT files seam" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="does-vlc-support-webvtt-subtitles-natively">Does VLC Support
+WebVTT Subtitles Natively?</h1>
+<p>VLC Media Player natively supports rendering subtitles in the WebVTT
+(<code>.vtt</code>) format, allowing users to load and view these text
+tracks directly without requiring external plugins or file conversions.
+While modern releases handle standard WebVTT files seamlessly,
+understanding how VLC processes these files, how to load them, and the
+limitations regarding advanced CSS styling ensures optimal playback.</p>
+<h3 id="native-support-overview">Native Support Overview</h3>
+<p>Native support for WebVTT (Web Video Text Tracks) was introduced to
+VLC Media Player in version 2.1.0 and received major improvements and
+stabilization in VLC 3.0. Because WebVTT is the primary subtitle
+standard for HTML5 video, VLC's internal demuxer automatically parses
+<code>.vtt</code> files alongside standard video formats such as MP4,
+MKV, and WebM, as well as adaptive streams like HLS.</p>
+<h3 id="how-to-load-webvtt-subtitles-in-vlc">How to Load WebVTT
+Subtitles in VLC</h3>
+<p>You can display WebVTT subtitles in VLC using two primary
+methods:</p>
+<ol type="1">
+<li><strong>Automatic Loading:</strong> Place the <code>.vtt</code> file
+in the same directory as your video file and ensure both files share the
+exact same name (for example, <code>movie.mp4</code> and
+<code>movie.vtt</code>). When you open the video, VLC automatically
+detects and enables the subtitle track.</li>
+<li><strong>Manual Loading:</strong> Open your video in VLC, navigate to
+the top menu bar, select <strong>Subtitle</strong>, click <strong>Add
+Subtitle File...</strong>, and browse to select your <code>.vtt</code>
+file. Alternatively, you can drag and drop the <code>.vtt</code> file
+directly into the active VLC playback window.</li>
+</ol>
+<h3 id="formatting-and-feature-limitations">Formatting and Feature
+Limitations</h3>
+<p>While VLC supports core WebVTT features, it does not support every
+specification defined for modern web browsers:</p>
+<ul>
+<li><strong>Text and Timings:</strong> Basic cue timings, cue payloads,
+and line breaks are fully supported.</li>
+<li><strong>Basic Styling:</strong> Standard inline tags such as
+<code>&lt;b&gt;</code> (bold), <code>&lt;i&gt;</code> (italic), and
+<code>&lt;u&gt;</code> (underline) render properly.</li>
+<li><strong>CSS and Positioning:</strong> Advanced WebVTT features—such
+as custom CSS <code>&lt;style&gt;</code> blocks, cue positioning
+(<code>line:</code>, <code>position:</code>, <code>align:</code>), and
+responsive sizing—have limited or inconsistent rendering in VLC. VLC
+often strips out these properties and defaults to its global subtitle
+appearance settings.</li>
+</ul>
+<h3 id="troubleshooting-webvtt-in-vlc">Troubleshooting WebVTT in
+VLC</h3>
+<p>If a WebVTT file fails to display:</p>
+<ul>
+<li><strong>Verify the Header:</strong> Open the subtitle file in a text
+editor and ensure the very first line reads <code>WEBVTT</code>. Without
+this standard header, VLC will fail to recognize the file format.</li>
+<li><strong>Check Character Encoding:</strong> Ensure the
+<code>.vtt</code> file is saved using UTF-8 encoding. Non-UTF-8
+encodings can cause missing subtitles or garbled characters.</li>
+<li><strong>Update VLC:</strong> Verify you are running VLC 3.0 or newer
+to ensure you have the latest parser updates and bug fixes for subtitle
+rendering.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

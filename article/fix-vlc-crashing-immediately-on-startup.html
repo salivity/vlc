@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix VLC Crashing Immediately on Startup - vlc</title>
+    <meta name="description" content="When VLC Media Player crashes immediately upon launch, it is typically caused by corrupted configuration files, incompatible hardware acceleration settings, outdated graphics drivers, or conflicts with recent updates. This guide outlines the most effecti">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/fix-vlc-crashing-immediately-on-startup">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Fix VLC Crashing Immediately on Startup - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/fix-vlc-crashing-immediately-on-startup" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="When VLC Media Player crashes immediately upon launch, it is typically caused by corrupted configuration files, incompatible hardware acceleration settings, outdated graphics drivers, or conflicts with recent updates. This guide outlines the most effecti" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="fix-vlc-crashing-immediately-on-startup">Fix VLC Crashing
+Immediately on Startup</h1>
+<p>When VLC Media Player crashes immediately upon launch, it is
+typically caused by corrupted configuration files, incompatible hardware
+acceleration settings, outdated graphics drivers, or conflicts with
+recent updates. This guide outlines the most effective troubleshooting
+steps to resolve instant startup crashes in VLC, walking you through
+quick preference resets, configuration tweaks, and clean reinstallation
+methods to get your media player running smoothly again.</p>
+<h2 id="1-reset-vlc-preferences-and-cache">1. Reset VLC Preferences and
+Cache</h2>
+<p>Corrupted settings or cache files are the most frequent cause of
+startup crashes. You can clear them without opening the application.</p>
+<ul>
+<li><strong>Windows:</strong>
+<ol type="1">
+<li>Press <code>Windows Key + R</code> to open the Run dialog.</li>
+<li>Type <code>%appdata%</code> and press Enter.</li>
+<li>Locate the folder named <code>vlc</code>.</li>
+<li>Delete the <code>vlc</code> folder or rename it to
+<code>vlc.old</code>.</li>
+</ol></li>
+<li><strong>macOS:</strong>
+<ol type="1">
+<li>Open Finder and press <code>Cmd + Shift + G</code>.</li>
+<li>Enter <code>~/Library/Preferences/</code> and delete
+<code>org.videolan.vlc</code> and
+<code>org.videolan.vlc.plist</code>.</li>
+</ol></li>
+<li><strong>Linux:</strong>
+<ol type="1">
+<li>Open your terminal and run: <code>vlc --reset-config</code> or
+remove the directory with <code>rm -r ~/.config/vlc</code>.</li>
+</ol></li>
+</ul>
+<p>Restart VLC after clearing these files to see if the issue is
+resolved.</p>
+<h2
+id="2-launch-vlc-from-the-command-line-with-acceleration-disabled">2.
+Launch VLC from the Command Line with Acceleration Disabled</h2>
+<p>If a video output or hardware decoding setting is crashing the
+program at initialization, launch VLC with those features disabled via
+the command line.</p>
+<ol type="1">
+<li>Open the Command Prompt (Windows) or Terminal (macOS/Linux).</li>
+<li>On Windows, navigate to your VLC directory (usually
+<code>cd "C:\Program Files\VideoLAN\VLC"</code>).</li>
+<li>Run the following command:
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">vlc</span> <span class="at">--no-video-title-show</span> <span class="at">--avcodec-hw</span><span class="op">=</span>none</span></code></pre></div></li>
+<li>If VLC opens successfully, go to <strong>Tools &gt; Preferences &gt;
+Input / Codecs</strong> and set <strong>Hardware-accelerated
+decoding</strong> to <strong>Disable</strong>. Click
+<strong>Save</strong>.</li>
+</ol>
+<h2 id="3-change-the-video-output-module">3. Change the Video Output
+Module</h2>
+<p>An incompatibility between VLC's default video output module and your
+operating system's display server can cause instant termination.</p>
+<ol type="1">
+<li>Open VLC Preferences (if accessible via the command above or safe
+mode).</li>
+<li>Click <strong>Tools &gt; Preferences</strong> and select
+<strong>All</strong> under the "Show settings" section at the bottom
+left.</li>
+<li>Navigate to <strong>Video &gt; Output modules</strong>.</li>
+<li>Change the drop-down selection from <strong>Automatic</strong> to
+<strong>DirectX (DirectDraw) video output</strong> or
+<strong>OpenGL</strong>.</li>
+<li>Save the settings and restart VLC normally.</li>
+</ol>
+<h2 id="4-update-your-graphics-drivers">4. Update Your Graphics
+Drivers</h2>
+<p>VLC relies heavily on your GPU for rendering. An outdated or corrupt
+graphics driver can cause an immediate crash when the player attempts to
+initialize its rendering engine.</p>
+<ul>
+<li>Visit the official website of your GPU manufacturer (NVIDIA, AMD, or
+Intel).</li>
+<li>Download and install the latest stable driver for your specific
+hardware.</li>
+<li>Restart your computer and attempt to open VLC again.</li>
+</ul>
+<h2 id="5-perform-a-clean-reinstallation">5. Perform a Clean
+Reinstallation</h2>
+<p>If internal binaries or shared libraries have become corrupted, a
+standard reinstall might leave the problematic files behind.</p>
+<ol type="1">
+<li>Uninstall VLC through your system's application manager.</li>
+<li>When prompted, check the option to <strong>Delete preferences and
+cache</strong>.</li>
+<li>Manually check that <code>%appdata%\vlc</code> (Windows) or
+<code>~/.config/vlc</code> (Linux) has been completely removed.</li>
+<li>Download the latest official release directly from the VideoLAN
+website.</li>
+<li>If the 64-bit version continues to fail, download and test the
+32-bit version, as it often bypasses specific system architecture
+conflicts.</li>
+</ol></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

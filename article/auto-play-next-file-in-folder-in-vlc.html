@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Play Next File in Folder in VLC - vlc</title>
+    <meta name="description" content="By default, VLC Media Player stops after finishing a single media file, requiring manual interaction to start the next one. You can configure VLC to automatically play every subsequent video or audio track in a directory without manually building or savi">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/auto-play-next-file-in-folder-in-vlc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Auto-Play Next File in Folder in VLC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/auto-play-next-file-in-folder-in-vlc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="By default, VLC Media Player stops after finishing a single media file, requiring manual interaction to start the next one. You can configure VLC to automatically play every subsequent video or audio track in a directory without manually building or savi" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="auto-play-next-file-in-folder-in-vlc">Auto-Play Next File in
+Folder in VLC</h1>
+<p>By default, VLC Media Player stops after finishing a single media
+file, requiring manual interaction to start the next one. You can
+configure VLC to automatically play every subsequent video or audio
+track in a directory without manually building or saving playlist files.
+This guide details how to adjust VLC's native settings and playback
+methods to achieve seamless, continuous playback straight from any
+folder.</p>
+<h2 id="method-1-play-the-entire-folder-directly">Method 1: Play the
+Entire Folder Directly</h2>
+<p>The quickest built-in way to play through a directory without
+manually saving a playlist file is to point VLC to the directory
+itself:</p>
+<ol type="1">
+<li>Open VLC Media Player.</li>
+<li>Click <strong>Media</strong> on the top menu bar and select
+<strong>Open Folder...</strong> (or press <code>Ctrl + F</code> on
+Windows / <code>Cmd + O</code> on macOS).</li>
+<li>Select the folder containing your media files and click
+<strong>Select Folder</strong>.</li>
+</ol>
+<p>VLC will automatically load all playable files in that directory in
+alphabetical order and transition to the next file as each finishes. You
+can also achieve this by simply dragging an entire folder and dropping
+it directly into an open VLC window.</p>
+<h2 id="method-2-configure-advanced-playlist-preferences">Method 2:
+Configure Advanced Playlist Preferences</h2>
+<p>To ensure VLC automatically advances through queued folder items
+without stopping:</p>
+<ol type="1">
+<li>Click <strong>Tools</strong> &gt; <strong>Preferences</strong> (or
+press <code>Ctrl + P</code>).</li>
+<li>In the bottom-left corner under <strong>Show settings</strong>,
+change the radio button from <strong>Simple</strong> to
+<strong>All</strong>.</li>
+<li>In the left-hand navigation tree, click on
+<strong>Playlist</strong>.</li>
+<li>In the right panel, verify the following options:
+<ul>
+<li>Uncheck <strong>Play and exit</strong> (if checked, VLC terminates
+after one file).</li>
+<li>Uncheck <strong>Play and pause</strong> (if checked, VLC pauses at
+the end of each track).</li>
+<li>Check <strong>Automatically prepare next item in
+playlist</strong>.</li>
+<li>Change <strong>Subdirectory behavior</strong> to
+<strong>Expand</strong> to include files located inside subfolders.</li>
+</ul></li>
+<li>Click <strong>Save</strong> and restart VLC.</li>
+</ol>
+<h2 id="method-3-enable-single-instance-enqueue-mode">Method 3: Enable
+Single-Instance Enqueue Mode</h2>
+<p>If you frequently launch files by double-clicking them in your
+operating system's file manager, you can instruct VLC to append
+subsequent selections into the current queue rather than interrupting
+playback:</p>
+<ol type="1">
+<li>Go to <strong>Tools</strong> &gt; <strong>Preferences</strong>.</li>
+<li>Keep the view set to <strong>Simple</strong> and remain on the
+<strong>Interface</strong> tab.</li>
+<li>Scroll down to the <strong>Playlist and Instances</strong>
+section.</li>
+<li>Check <strong>Use only one instance when started from file
+manager</strong>.</li>
+<li>Check <strong>Enqueue items into playlist in one instance
+mode</strong>.</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<p>With these settings active, selecting multiple files in a folder and
+pressing Enter or right-clicking to open them will automatically queue
+them sequentially in a single VLC session.</p></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

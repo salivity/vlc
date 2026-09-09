@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Stream SMB and CIFS Shares in VLC - vlc</title>
+    <meta name="description" content="VLC Media Player includes built-in support for SMB (Server Message Block) and CIFS protocols, allowing you to stream videos and music directly from local network storage, such as a NAS or shared PC folder, without downloading the files first. This guide">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/how-to-stream-smb-and-cifs-shares-in-vlc">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Stream SMB and CIFS Shares in VLC - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/how-to-stream-smb-and-cifs-shares-in-vlc" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="VLC Media Player includes built-in support for SMB (Server Message Block) and CIFS protocols, allowing you to stream videos and music directly from local network storage, such as a NAS or shared PC folder, without downloading the files first. This guide" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-stream-smb-and-cifs-shares-in-vlc">How to Stream SMB and
+CIFS Shares in VLC</h1>
+<p>VLC Media Player includes built-in support for SMB (Server Message
+Block) and CIFS protocols, allowing you to stream videos and music
+directly from local network storage, such as a NAS or shared PC folder,
+without downloading the files first. This guide provides step-by-step
+instructions on how to discover network shares automatically, connect to
+them manually, and configure settings across desktop and mobile
+devices.</p>
+<h2 id="accessing-smb-shares-on-desktop-windows-and-macos">Accessing SMB
+Shares on Desktop (Windows and macOS)</h2>
+<h3 id="method-1-automatic-discovery">Method 1: Automatic Discovery</h3>
+<ol type="1">
+<li>Open VLC Media Player.</li>
+<li>Open the Playlist view by pressing <strong>Ctrl + L</strong>
+(Windows) or <strong>Cmd + Shift + P</strong> (macOS), or by selecting
+<strong>View</strong> &gt; <strong>Playlist</strong>.</li>
+<li>In the left-hand sidebar, scroll to the <strong>Local
+Network</strong> section.</li>
+<li>Click on <strong>Universal Plug 'n' Play</strong> or <strong>Windows
+Shares (SMB)</strong>.</li>
+<li>Wait a few moments for your network devices to appear. Double-click
+your server or computer name, enter your network username and password
+if prompted, and browse to your media folder.</li>
+</ol>
+<h3 id="method-2-direct-network-stream-manual-connection">Method 2:
+Direct Network Stream (Manual Connection)</h3>
+<p>If your share does not appear automatically, you can connect directly
+using its local IP address or hostname:</p>
+<ol type="1">
+<li>Click <strong>Media</strong> (or <strong>File</strong> on macOS) in
+the top menu bar.</li>
+<li>Select <strong>Open Network Stream...</strong> (shortcut:
+<strong>Ctrl + N</strong> on Windows, <strong>Cmd + N</strong> on
+macOS).</li>
+<li>In the URL field, enter the path using the SMB protocol
+format:<br />
+<code>smb://[IP-ADDRESS]/[SHARE-NAME]</code><br />
+<em>(Example: <code>smb://192.168.1.100/Media</code>)</em></li>
+<li>If your share requires authentication, you can format the URL with
+credentials:<br />
+<code>smb://username:password@[IP-ADDRESS]/[SHARE-NAME]</code></li>
+<li>Click <strong>Play</strong> to start browsing or streaming.</li>
+</ol>
+<hr />
+<h2 id="accessing-smb-shares-on-mobile-android-and-ios">Accessing SMB
+Shares on Mobile (Android and iOS)</h2>
+<ol type="1">
+<li>Open the VLC app on your smartphone or tablet.</li>
+<li>Tap the <strong>Browse</strong> tab located in the bottom navigation
+bar.</li>
+<li>Under the <strong>Local Network</strong> header, wait for your
+network drives to populate.</li>
+<li>Tap your server name to connect. If credentials are required, enter
+your username and password when prompted.</li>
+</ol>
+<h3 id="adding-a-server-manually-on-mobile">Adding a Server Manually on
+Mobile</h3>
+<p>If the share does not show up automatically:</p>
+<ol type="1">
+<li>In the <strong>Browse</strong> tab, tap the <strong>+</strong>
+(plus) icon or <strong>Add server</strong>.</li>
+<li>Select <strong>SMB</strong> from the protocol dropdown list.</li>
+<li>Enter the server's local IP address (e.g.,
+<code>192.168.1.50</code>).</li>
+<li>Enter the shared folder name, along with your username and
+password.</li>
+<li>Save the connection to access the share at any time from your list
+of servers.</li>
+</ol>
+<hr />
+<h2 id="troubleshooting-common-smb-issues-in-vlc">Troubleshooting Common
+SMB Issues in VLC</h2>
+<ul>
+<li><strong>SMB Protocol Version:</strong> Modern operating systems
+disable SMBv1 for security reasons. If VLC cannot connect, navigate to
+<strong>Tools</strong> &gt; <strong>Preferences</strong> (set to
+<strong>All</strong> at the bottom left), go to <strong>Input /
+Codecs</strong> &gt; <strong>Access modules</strong> &gt;
+<strong>SMB</strong>, and set the <strong>SMB version</strong> to SMBv2
+or SMBv3.</li>
+<li><strong>Firewall Blocking:</strong> Ensure that ports 445 and 139
+are not blocked by the firewall on the host machine hosting the
+files.</li>
+<li><strong>Credentials:</strong> If you do not use a password on your
+host machine, Windows may block remote access by default. Ensure the
+sharing computer has password-protected sharing configured
+properly.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

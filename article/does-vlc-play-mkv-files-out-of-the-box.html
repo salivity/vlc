@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Does VLC Play MKV Files Out of the Box? - vlc</title>
+    <meta name="description" content="This article provides a quick overview of VLC Media Player's native compatibility with MKV (Matroska) files, explaining whether it supports them out of the box and how it handles various video and audio codecs. You will also find troubleshooting steps fo">
+    <link rel="canonical" href="https://salivity.github.io/vlc/article/does-vlc-play-mkv-files-out-of-the-box">
+    <link rel="search" type="application/opensearchdescription+xml" title="vlc" href="/vlc/opensearch.xml">
+    <link rel="icon" href="/vlc/favicon.ico">
+    <link rel="stylesheet" href="/vlc/css/style.css">
+    <link media="print" rel="stylesheet" href="/vlc/css/print.css">
+    <script src="/vlc/js/fuse.min.js"></script>
+    <script src="/vlc/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Does VLC Play MKV Files Out of the Box? - vlc" />
+    <meta property="og:url" content="https://salivity.github.io/vlc/article/does-vlc-play-mkv-files-out-of-the-box" />
+    <meta property="og:image:url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/vlc/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article provides a quick overview of VLC Media Player's native compatibility with MKV (Matroska) files, explaining whether it supports them out of the box and how it handles various video and audio codecs. You will also find troubleshooting steps fo" />
+    <link rel="manifest" href="/vlc/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/vlc/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>vlc</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/vlc/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="does-vlc-play-mkv-files-out-of-the-box">Does VLC Play MKV Files
+Out of the Box?</h1>
+<p>This article provides a quick overview of VLC Media Player's native
+compatibility with MKV (Matroska) files, explaining whether it supports
+them out of the box and how it handles various video and audio codecs.
+You will also find troubleshooting steps for common playback issues and
+tips for optimizing your viewing experience.</p>
+<h3 id="native-mkv-support-in-vlc">Native MKV Support in VLC</h3>
+<p>The short answer is <strong>yes</strong>. VLC Media Player supports
+playing MKV files right out of the box on almost all platforms,
+including Windows, macOS, Linux, Android, and iOS. You do not need to
+download or install any additional third-party codec packs to get MKV
+videos to play. Because VLC is designed with built-in, open-source
+decoders, it can read the Matroska container format immediately after a
+standard installation.</p>
+<h3 id="understanding-the-mkv-container">Understanding the MKV
+Container</h3>
+<p>To understand why VLC handles MKV so well, it helps to know what an
+MKV file actually is. MKV is not a video compression format; it is a
+<strong>multimedia container</strong>.</p>
+<ul>
+<li><strong>The Shell:</strong> Think of an MKV file as an envelope that
+holds different tracks together.</li>
+<li><strong>The Contents:</strong> Inside that envelope, you can have
+video tracks, multiple audio tracks (for different languages), subtitle
+tracks, and chapter points.</li>
+</ul>
+<p>VLC is highly capable because its built-in library includes decoders
+for the most common formats found inside an MKV container, such as
+H.264, H.265 (HEVC), AAC, MP3, and DTS audio.</p>
+<h3 id="why-an-mkv-might-fail-to-play-in-vlc">Why an MKV Might Fail to
+Play in VLC</h3>
+<p>While VLC plays the vast majority of MKV files flawlessly, you might
+occasionally encounter errors like a black screen, stuttering, or
+missing audio. This usually happens due to a few specific reasons:</p>
+<ul>
+<li><strong>Corrupted Files:</strong> If the MKV file was downloaded
+incompletely or suffered data corruption, VLC will struggle to read the
+timeline correctly.</li>
+<li><strong>Missing Rare Codecs:</strong> If the MKV container holds a
+highly unusual or proprietary video/audio codec that is not included in
+VLC's standard library, the file won't play properly.</li>
+<li><strong>Hardware Limitations:</strong> High-resolution MKV files
+(such as 4K or 8K video encoded in HEVC 10-bit) require significant
+processing power. Older computers might experience heavy lagging or
+freezing.</li>
+</ul>
+<h3 id="how-to-fix-vlc-mkv-playback-issues">How to Fix VLC MKV Playback
+Issues</h3>
+<p>If you run into trouble playing an MKV file, you can try several
+quick troubleshooting steps to resolve the issue:</p>
+<ul>
+<li><strong>Enable Hardware Acceleration:</strong> Go to
+<code>Tools</code> &gt; <code>Preferences</code> &gt;
+<code>Input / Codecs</code> and ensure that "Hardware-accelerated
+decoding" is set to Automatic. This offloads the processing power to
+your graphics card.</li>
+<li><strong>Update VLC:</strong> Ensure you are using the latest version
+of VLC Media Player, as updates frequently include performance
+improvements and new codec support.</li>
+<li><strong>Change the Output Module:</strong> In the Preferences menu
+under <code>Video</code>, try changing the "Output" dropdown menu from
+Automatic to "DirectX" or "OpenGL" to fix rendering glitches.</li>
+<li><strong>Disable Pre-allocation:</strong> For high-definition videos
+that stutter, navigating to <code>Advanced Preferences</code> &gt;
+<code>Input / Codecs</code> &gt; <code>Advanced</code> and disabling
+"File pre-allocation" can sometimes smooth out performance.</li>
+</ul></article>
+        <div id="comments-container"></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/vlc'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/vlc/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/vlc/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
